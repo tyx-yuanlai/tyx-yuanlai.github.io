@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>UPGRADE | My Blog</title>
+<meta name="keywords" content="cpp">
+<meta name="description" content="UPGRADE
+std::srand(std::time(0));
+std::rand()%length_;
+//UPGRADE c&#43;&#43;11 引入random库
+C&#43;&#43;11 引入了 &lt;random&gt;​ 库，提供了更强大、更灵活的随机数生成功能。与 rand()​ 相比，&lt;random&gt;​ 库具有以下优点：
+
+更高质量的随机数。
+更灵活的范围控制。
+支持多种随机数分布（如均匀分布、正态分布等）。
+
+下面是如何使用 &lt;random&gt;​ 库生成随机数的详细说明和示例代码。
+
+&lt;random&gt;​ 库的核心组件
+
+
+随机数引擎：
+
+
+用于生成随机数序列。
+
+
+常用的引擎：
+
+​std::default_random_engine​：默认的随机数引擎。
+​std::mt19937​：基于梅森旋转算法的随机数引擎（高质量）。
+
+
+
+
+
+随机数分布：
+
+
+用于将随机数引擎生成的随机数映射到指定的分布。
+
+
+常用的分布：
+
+​std::uniform_int_distribution​：均匀分布的整数。
+​std::uniform_real_distribution​：均匀分布的浮点数。
+​std::normal_distribution​：正态分布的浮点数。
+
+
+
+
+
+种子：
+
+用于初始化随机数引擎。
+可以使用当前时间（std::time(0)​）作为种子，以确保每次运行程序时生成不同的随机数序列。
+
+
+
+
+示例代码
+1. 生成均匀分布的整数
+#include &lt;iostream&gt;
+#include &lt;random&gt;  // 包含随机数库
+#include &lt;ctime&gt;   // 用于获取时间种子
+
+int main() {
+    // 初始化随机数引擎
+    std::mt19937 rng(std::time(0));
+
+    // 定义分布范围 [min, max]
+    int min = -10;
+    int max = 10;
+    std::uniform_int_distribution&lt;int&gt; dist(min, max);
+
+    // 生成随机数
+    for (int i = 0; i &lt; 10; &#43;&#43;i) {
+        int randomValue = dist(rng);
+        std::cout &lt;&lt; &#34;Random value: &#34; &lt;&lt; randomValue &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+输出示例：">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/cpp/upgrade/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8a01929066b898aae4363d45c6bd096c27515143ceb80abc485bd7ebde149ef2.css" integrity="sha256-igGSkGa4mKrkNj1Fxr0JbCdRUUPOuAq8SFvX694UnvI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/cpp/upgrade/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      UPGRADE
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="upgrade">UPGRADE<a hidden class="anchor" aria-hidden="true" href="#upgrade">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#f92672">::</span>srand(std<span style="color:#f92672">::</span>time(<span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>rand()<span style="color:#f92672">%</span>length_;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//UPGRADE c++11 引入random库
+</span></span></span></code></pre></div><p>C++11 引入了 <code>&lt;random&gt;</code>​ 库，提供了更强大、更灵活的随机数生成功能。与 <code>rand()</code>​ 相比，<code>&lt;random&gt;</code>​ 库具有以下优点：</p>
+<ol>
+<li><strong>更高质量的随机数</strong>。</li>
+<li><strong>更灵活的范围控制</strong>。</li>
+<li><strong>支持多种随机数分布</strong>（如均匀分布、正态分布等）。</li>
+</ol>
+<p>下面是如何使用 <code>&lt;random&gt;</code>​ 库生成随机数的详细说明和示例代码。</p>
+<hr>
+<h3 id="random-库的核心组件"><code>&lt;random&gt;</code>​ 库的核心组件<a hidden class="anchor" aria-hidden="true" href="#random-库的核心组件">#</a></h3>
+<ol>
+<li>
+<p><strong>随机数引擎</strong>：</p>
+<ul>
+<li>
+<p>用于生成随机数序列。</p>
+</li>
+<li>
+<p>常用的引擎：</p>
+<ul>
+<li>​<code>std::default_random_engine</code>​：默认的随机数引擎。</li>
+<li>​<code>std::mt19937</code>​：基于梅森旋转算法的随机数引擎（高质量）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>随机数分布</strong>：</p>
+<ul>
+<li>
+<p>用于将随机数引擎生成的随机数映射到指定的分布。</p>
+</li>
+<li>
+<p>常用的分布：</p>
+<ul>
+<li>​<code>std::uniform_int_distribution</code>​：均匀分布的整数。</li>
+<li>​<code>std::uniform_real_distribution</code>​：均匀分布的浮点数。</li>
+<li>​<code>std::normal_distribution</code>​：正态分布的浮点数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>种子</strong>：</p>
+<ul>
+<li>用于初始化随机数引擎。</li>
+<li>可以使用当前时间（<code>std::time(0)</code>​）作为种子，以确保每次运行程序时生成不同的随机数序列。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="示例代码">示例代码<a hidden class="anchor" aria-hidden="true" href="#示例代码">#</a></h3>
+<h4 id="1-生成均匀分布的整数">1. 生成均匀分布的整数<a hidden class="anchor" aria-hidden="true" href="#1-生成均匀分布的整数">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;random&gt;</span><span style="color:#75715e">  </span><span style="color:#75715e">// 包含随机数库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ctime&gt;</span><span style="color:#75715e">   </span><span style="color:#75715e">// 用于获取时间种子
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化随机数引擎
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>mt19937 rng(std<span style="color:#f92672">::</span>time(<span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 定义分布范围 [min, max]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> max <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>uniform_int_distribution<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> dist(min, max);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 生成随机数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> randomValue <span style="color:#f92672">=</span> dist(rng);
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Random value: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> randomValue <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>输出示例：</p>
+<pre tabindex="0"><code>Random value: 3
+Random value: -5
+Random value: 8
+Random value: 0
+Random value: -2
+Random value: 7
+Random value: 4
+Random value: -9
+Random value: 6
+Random value: 1
+</code></pre><hr>
+<h4 id="2-生成均匀分布的浮点数">2. 生成均匀分布的浮点数<a hidden class="anchor" aria-hidden="true" href="#2-生成均匀分布的浮点数">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;random&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ctime&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化随机数引擎
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>mt19937 rng(std<span style="color:#f92672">::</span>time(<span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 定义分布范围 [min, max)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0f</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> max <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span>;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>uniform_real_distribution<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> dist(min, max);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 生成随机数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> randomValue <span style="color:#f92672">=</span> dist(rng);
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Random value: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> randomValue <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>输出示例：</p>
+<pre tabindex="0"><code>Random value: 0.123456
+Random value: 0.654321
+Random value: 0.987654
+Random value: 0.456789
+Random value: 0.321654
+Random value: 0.789123
+Random value: 0.234567
+Random value: 0.876543
+Random value: 0.345678
+Random value: 0.567890
+</code></pre><hr>
+<h4 id="3-生成正态分布的浮点数">3. 生成正态分布的浮点数<a hidden class="anchor" aria-hidden="true" href="#3-生成正态分布的浮点数">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;random&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ctime&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化随机数引擎
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>mt19937 rng(std<span style="color:#f92672">::</span>time(<span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 定义正态分布（均值为 0，标准差为 1）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>normal_distribution<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> dist(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 生成随机数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> randomValue <span style="color:#f92672">=</span> dist(rng);
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Random value: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> randomValue <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>输出示例：</p>
+<pre tabindex="0"><code>Random value: -0.123456
+Random value: 1.234567
+Random value: -0.987654
+Random value: 0.456789
+Random value: -1.234567
+Random value: 0.789123
+Random value: -0.345678
+Random value: 0.876543
+Random value: -0.567890
+Random value: 0.123456
+</code></pre><hr>
+<h3 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h3>
+<ul>
+<li>​<code>&lt;random&gt;</code>​ 库提供了更强大、更灵活的随机数生成功能。</li>
+<li>核心组件包括随机数引擎（如 <code>std::mt19937</code>​）和随机数分布（如 <code>std::uniform_int_distribution</code>​）。</li>
+<li>通过设置种子（如 <code>std::time(0)</code>​），可以确保每次运行程序时生成不同的随机数序列。</li>
+<li>可以根据需要生成均匀分布、正态分布等不同类型的随机数。</li>
+</ul>
+<p>如果你需要高质量的随机数，<code>&lt;random&gt;</code>​ 库是比 <code>rand()</code>​ 更好的选择！</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/cpp/">Cpp</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

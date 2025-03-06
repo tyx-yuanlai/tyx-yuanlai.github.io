@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>array | My Blog</title>
+<meta name="keywords" content="python">
+<meta name="description" content="array
+创造数组
+生成随机数组
+import numpy as np
+arr1=np.random.RandomState(种子).randint(首,末,数组形状)
+#生成随机整数数组
+arr2=np.random.RandomState.rand(数组形状)
+#生成随机0-1区间的数的数组
+列表转数组
+arr1=np.array(列表)
+生成range类数组
+arr2=np.arange(首,末,步长)
+#或者
+arr2=np.array(range(首,末,步长))
+生成元素全部相同的数组
+生成全0数组
+arr3=np.zeros(数组形状)
+这里0的格式默认为浮点型
+可以通过加入参数dtype=数据类型​改变类型
+生成全1数组
+arr3=np.ones(数组形状)
+同样的，这里的1也默认为float型
+也可以通过加入参数dtype=数据类型​改变类型
+生成全部相同数据数组
+arr3=np.full(数组形状,指定数据)
+生成单位矩阵
+arr=np.eye(方阵阶数)
+生成对角矩阵
+arr=np.diag()
+生成等差数列
+arr=linspace(首项,末相,相数)
+生成等比数列
+arr=logspace(首项,末相,相数)
+从文件中引入数据成为数组
+np.loadtxt
+切片
+对于一维数组，切片操作与列表相同
+对于多维数组，每个维度之间用逗号（,）​隔开
+多维数组切片写成arr1[][]​，表示一个一个维度取
+索引
+正常索引
+布尔索引
+布尔索引就是根据条件筛选
+判断每个元素在条件下是True还是False
+当条件判断True时，返回
+当条件判断为False时，过滤掉
+例
+import numpy as np
+
+arr_1d = np.arange(12)
+
+arr_1d[[False, False, False, False, False,  True,  True,  True,  True, True,  True,  True]]
+# out array([ 5,  6,  7,  8,  9, 10, 11])
+
+arr_1d&gt;=5
+# out array([False, False, False, False, False,  True,
+#  True,  True,  True, True,  True,  True])
+
+arr_1d[arr_1d&gt;=5]
+# out array([ 5,  6,  7,  8,  9, 10, 11])
+布尔索引引发的运算
+非运算
+import numpy as np
+
+arr_1d[~(arr_1d&gt;=5)]
+# out array([0, 1, 2, 3, 4])
+或运算
+import numpy as np
+
+arr_2d = np.array([[1, 2, 3, 4],[4, 5, 6, 7], [7, 8, 9, 10]])
+
+(arr_2d&gt;=8) | (arr_2d&lt;=2)
+# out array([[ True,  True, False, False],
+#       [False, False, False, False],
+#       [False,  True,  True,  True]])
+
+
+arr_2d[(arr_2d&gt;=8) | (arr_2d&lt;=2)]
+# out array([ 1,  2,  8,  9, 10])
+与运算
+import numpy as np
+
+arr_2d = np.array([[1, 2, 3, 4],[4, 5, 6, 7], [7, 8, 9, 10]])
+
+arr_2d[(arr_2d&lt;=8) &amp; (arr_2d&gt;=2)]
+# ount array([2, 3, 4, 4, 5, 6, 7, 7, 8])
+属性
+arr=np.arrange(1,10,1)
+arr.shape
+#数组/矩阵的形状
+arr.size
+#数组元素的数量
+arr.dtype
+#数组元素的类型
+arr.ndim
+#数组的维度
+形状操作
+arr2=arr1.reshanpe(新数组形状)
+#reshape返回一个新的数组，不改变原数组
+
+arr1.resize(新数组形状)
+#resize就地改变
+
+arr1.T
+#矩阵转置
+
+arr1.flatten
+#转化为一维数组
+删除与插入
+np.delete()
+np.insert()
+np.split
+np.vsplit
+np.vstack
+np.hstack
+运算
+布尔运算
+详情请参考布尔索引引发的运算">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/py/array/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8a01929066b898aae4363d45c6bd096c27515143ceb80abc485bd7ebde149ef2.css" integrity="sha256-igGSkGa4mKrkNj1Fxr0JbCdRUUPOuAq8SFvX694UnvI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/py/array/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      array
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="array">array<a hidden class="anchor" aria-hidden="true" href="#array">#</a></h1>
+<h1 id="创造数组">创造数组<a hidden class="anchor" aria-hidden="true" href="#创造数组">#</a></h1>
+<h3 id="生成随机数组">生成随机数组<a hidden class="anchor" aria-hidden="true" href="#生成随机数组">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>arr1<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>RandomState(种子)<span style="color:#f92672">.</span>randint(首,末,数组形状)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#生成随机整数数组</span>
+</span></span><span style="display:flex;"><span>arr2<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>RandomState<span style="color:#f92672">.</span>rand(数组形状)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#生成随机0-1区间的数的数组</span>
+</span></span></code></pre></div><h3 id="列表转数组">列表转数组<a hidden class="anchor" aria-hidden="true" href="#列表转数组">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr1<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>array(列表)
+</span></span></code></pre></div><h3 id="生成range类数组">生成range类数组<a hidden class="anchor" aria-hidden="true" href="#生成range类数组">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr2<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arange(首,末,步长)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#或者</span>
+</span></span><span style="display:flex;"><span>arr2<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>array(range(首,末,步长))
+</span></span></code></pre></div><h3 id="生成元素全部相同的数组">生成元素全部相同的数组<a hidden class="anchor" aria-hidden="true" href="#生成元素全部相同的数组">#</a></h3>
+<h5 id="生成全0数组">生成全0数组<a hidden class="anchor" aria-hidden="true" href="#生成全0数组">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr3<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros(数组形状)
+</span></span></code></pre></div><p>这里0的格式默认为浮点型</p>
+<p>可以通过加入参数<code>dtype=数据类型</code>​改变类型</p>
+<h5 id="生成全1数组">生成全1数组<a hidden class="anchor" aria-hidden="true" href="#生成全1数组">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr3<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones(数组形状)
+</span></span></code></pre></div><p>同样的，这里的1也默认为float型</p>
+<p>也可以通过加入参数<code>dtype=数据类型</code>​改变类型</p>
+<h5 id="生成全部相同数据数组">生成全部相同数据数组<a hidden class="anchor" aria-hidden="true" href="#生成全部相同数据数组">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr3<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>full(数组形状,指定数据)
+</span></span></code></pre></div><h3 id="生成单位矩阵">生成单位矩阵<a hidden class="anchor" aria-hidden="true" href="#生成单位矩阵">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>eye(方阵阶数)
+</span></span></code></pre></div><h3 id="生成对角矩阵">生成对角矩阵<a hidden class="anchor" aria-hidden="true" href="#生成对角矩阵">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>diag()
+</span></span></code></pre></div><h3 id="生成等差数列">生成等差数列<a hidden class="anchor" aria-hidden="true" href="#生成等差数列">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr<span style="color:#f92672">=</span>linspace(首项,末相,相数)
+</span></span></code></pre></div><h3 id="生成等比数列">生成等比数列<a hidden class="anchor" aria-hidden="true" href="#生成等比数列">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr<span style="color:#f92672">=</span>logspace(首项,末相,相数)
+</span></span></code></pre></div><h3 id="从文件中引入数据成为数组">从文件中引入数据成为数组<a hidden class="anchor" aria-hidden="true" href="#从文件中引入数据成为数组">#</a></h3>
+<p>np.loadtxt</p>
+<h1 id="切片">切片<a hidden class="anchor" aria-hidden="true" href="#切片">#</a></h1>
+<p>对于一维数组，切片操作与列表相同</p>
+<p>对于多维数组，每个维度之间用<code>逗号（,）</code>​隔开</p>
+<p>多维数组切片写成<code>arr1[][]</code>​，表示一个一个维度取</p>
+<h1 id="索引">索引<a hidden class="anchor" aria-hidden="true" href="#索引">#</a></h1>
+<h3 id="正常索引">正常索引<a hidden class="anchor" aria-hidden="true" href="#正常索引">#</a></h3>
+<h3 id="布尔索引">布尔索引<a hidden class="anchor" aria-hidden="true" href="#布尔索引">#</a></h3>
+<p>布尔索引就是根据条件筛选</p>
+<p>判断每个元素在条件下是True还是False</p>
+<p>当条件判断True时，返回</p>
+<p>当条件判断为False时，过滤掉</p>
+<p>例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_1d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_1d[[<span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>,  <span style="color:#66d9ef">True</span>,  <span style="color:#66d9ef">True</span>,  <span style="color:#66d9ef">True</span>,  <span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">True</span>,  <span style="color:#66d9ef">True</span>,  <span style="color:#66d9ef">True</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([ 5,  6,  7,  8,  9, 10, 11])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_1d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([False, False, False, False, False,  True,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  True,  True,  True, True,  True,  True])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_1d[arr_1d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([ 5,  6,  7,  8,  9, 10, 11])</span>
+</span></span></code></pre></div><h3 id="布尔索引引发的运算">布尔索引引发的运算<a hidden class="anchor" aria-hidden="true" href="#布尔索引引发的运算">#</a></h3>
+<h5 id="非运算">非运算<a hidden class="anchor" aria-hidden="true" href="#非运算">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_1d[<span style="color:#f92672">~</span>(arr_1d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">5</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([0, 1, 2, 3, 4])</span>
+</span></span></code></pre></div><h5 id="或运算">或运算<a hidden class="anchor" aria-hidden="true" href="#或运算">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_2d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>], [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(arr_2d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">8</span>) <span style="color:#f92672">|</span> (arr_2d<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([[ True,  True, False, False],</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       [False, False, False, False],</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       [False,  True,  True,  True]])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_2d[(arr_2d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">8</span>) <span style="color:#f92672">|</span> (arr_2d<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">2</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># out array([ 1,  2,  8,  9, 10])</span>
+</span></span></code></pre></div><h5 id="与运算">与运算<a hidden class="anchor" aria-hidden="true" href="#与运算">#</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_2d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>], [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr_2d[(arr_2d<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">8</span>) <span style="color:#f92672">&amp;</span> (arr_2d<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">2</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ount array([2, 3, 4, 4, 5, 6, 7, 7, 8])</span>
+</span></span></code></pre></div><h1 id="属性">属性<a hidden class="anchor" aria-hidden="true" href="#属性">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arrange(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#数组/矩阵的形状</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#数组元素的数量</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>dtype
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#数组元素的类型</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>ndim
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#数组的维度</span>
+</span></span></code></pre></div><h1 id="形状操作">形状操作<a hidden class="anchor" aria-hidden="true" href="#形状操作">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr2<span style="color:#f92672">=</span>arr1<span style="color:#f92672">.</span>reshanpe(新数组形状)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#reshape返回一个新的数组，不改变原数组</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr1<span style="color:#f92672">.</span>resize(新数组形状)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#resize就地改变</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr1<span style="color:#f92672">.</span>T
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#矩阵转置</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr1<span style="color:#f92672">.</span>flatten
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#转化为一维数组</span>
+</span></span></code></pre></div><h1 id="删除与插入">删除与插入<a hidden class="anchor" aria-hidden="true" href="#删除与插入">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>np<span style="color:#f92672">.</span>delete()
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>insert()
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>split
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>vsplit
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>vstack
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>hstack
+</span></span></code></pre></div><h1 id="运算">运算<a hidden class="anchor" aria-hidden="true" href="#运算">#</a></h1>
+<h3 id="布尔运算">布尔运算<a hidden class="anchor" aria-hidden="true" href="#布尔运算">#</a></h3>
+<p>详情请参考布尔索引引发的运算</p>
+<h3 id="加法与广播原则">加法与广播原则<a hidden class="anchor" aria-hidden="true" href="#加法与广播原则">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

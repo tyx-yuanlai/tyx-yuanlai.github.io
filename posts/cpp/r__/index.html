@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>R_()_ | My Blog</title>
+<meta name="keywords" content="cpp">
+<meta name="description" content="R&quot;()&quot;
+在C&#43;&#43;11及以上版本中，R&quot;()&quot;​ 是一种原始字符串字面量（Raw String Literal） 的语法，用于避免转义字符（如\n​、\t​等）的麻烦。原始字符串字面量会保留字符串中的所有字符，包括换行符和特殊符号，直到遇到结束标记为止。
+基本语法
+原始字符串字面量的语法如下：
+R&#34;delimiter(raw_characters)delimiter&#34;
+
+​delimiter​ 是一个可选的标记，用于避免字符串内容中出现与结束标记冲突的情况。
+​raw_characters​ 是字符串的实际内容。
+
+如果没有特殊需求，可以省略 delimiter​，直接使用 R&quot;(...)&quot;​。
+
+示例 1：基本用法
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    // 使用原始字符串字面量
+    std::string str = R&#34;(Hello, World!\nThis is a &#34;raw&#34; string.)&#34;;
+
+    std::cout &lt;&lt; str &lt;&lt; std::endl;
+    return 0;
+}
+输出：
+Hello, World!\nThis is a &#34;raw&#34; string.
+注意：
+
+字符串中的 \n​ 不会被解释为换行符，而是直接作为字符 \​ 和 n​ 输出。
+双引号 &quot;​ 也不需要转义。
+
+
+示例 2：包含换行符
+原始字符串字面量可以包含换行符，换行符会直接保留在字符串中。
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string str = R&#34;(Line 1
+Line 2
+Line 3)&#34;;
+
+    std::cout &lt;&lt; str &lt;&lt; std::endl;
+    return 0;
+}
+输出：">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/cpp/r__/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8a01929066b898aae4363d45c6bd096c27515143ceb80abc485bd7ebde149ef2.css" integrity="sha256-igGSkGa4mKrkNj1Fxr0JbCdRUUPOuAq8SFvX694UnvI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/cpp/r__/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      R_()_
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="r">R&quot;()&quot;<a hidden class="anchor" aria-hidden="true" href="#r">#</a></h1>
+<p>在C++11及以上版本中，<code>R&quot;()&quot;</code>​ 是一种<strong>原始字符串字面量（Raw String Literal）</strong> 的语法，用于避免转义字符（如<code>\n</code>​、<code>\t</code>​等）的麻烦。原始字符串字面量会保留字符串中的所有字符，包括换行符和特殊符号，直到遇到结束标记为止。</p>
+<h3 id="基本语法">基本语法<a hidden class="anchor" aria-hidden="true" href="#基本语法">#</a></h3>
+<p>原始字符串字面量的语法如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>R<span style="color:#e6db74">&#34;delimiter(raw_characters)delimiter&#34;</span>
+</span></span></code></pre></div><ul>
+<li>​<code>delimiter</code>​ 是一个可选的标记，用于避免字符串内容中出现与结束标记冲突的情况。</li>
+<li>​<code>raw_characters</code>​ 是字符串的实际内容。</li>
+</ul>
+<p>如果没有特殊需求，可以省略 <code>delimiter</code>​，直接使用 <code>R&quot;(...)&quot;</code>​。</p>
+<hr>
+<h3 id="示例-1基本用法">示例 1：基本用法<a hidden class="anchor" aria-hidden="true" href="#示例-1基本用法">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 使用原始字符串字面量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>string str <span style="color:#f92672">=</span> R<span style="color:#e6db74">&#34;(Hello, World!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">This is a &#34;</span>raw<span style="color:#e6db74">&#34; string.)&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>输出：</strong></p>
+<pre tabindex="0"><code>Hello, World!\nThis is a &#34;raw&#34; string.
+</code></pre><p>注意：</p>
+<ul>
+<li>字符串中的 <code>\n</code>​ 不会被解释为换行符，而是直接作为字符 <code>\</code>​ 和 <code>n</code>​ 输出。</li>
+<li>双引号 <code>&quot;</code>​ 也不需要转义。</li>
+</ul>
+<hr>
+<h3 id="示例-2包含换行符">示例 2：包含换行符<a hidden class="anchor" aria-hidden="true" href="#示例-2包含换行符">#</a></h3>
+<p>原始字符串字面量可以包含换行符，换行符会直接保留在字符串中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string str <span style="color:#f92672">=</span> R<span style="color:#e6db74">&#34;(Line 1</span>
+</span></span><span style="display:flex;"><span>Line <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Line <span style="color:#ae81ff">3</span>)<span style="color:#e6db74">&#34;;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>输出：</strong></p>
+<pre tabindex="0"><code>Line 1
+Line 2
+Line 3
+</code></pre><hr>
+<h3 id="示例-3自定义分隔符">示例 3：自定义分隔符<a hidden class="anchor" aria-hidden="true" href="#示例-3自定义分隔符">#</a></h3>
+<p>如果字符串内容中包含 <code>)&quot;</code>​，会导致原始字符串提前结束。此时可以使用自定义分隔符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 使用自定义分隔符 &#34;delim&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>string str <span style="color:#f92672">=</span> R<span style="color:#e6db74">&#34;delim(This is a string with )&#34;</span> inside it.)delim<span style="color:#e6db74">&#34;;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>输出：</strong></p>
+<pre tabindex="0"><code>This is a string with )&#34; inside it.
+</code></pre><hr>
+<h3 id="示例-4多行字符串">示例 4：多行字符串<a hidden class="anchor" aria-hidden="true" href="#示例-4多行字符串">#</a></h3>
+<p>原始字符串字面量非常适合定义多行字符串，例如 JSON、XML 或 SQL 查询。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string json <span style="color:#f92672">=</span> R<span style="color:#e6db74">&#34;(</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alice&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;city&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wonderland&#34;</span>
+</span></span><span style="display:flex;"><span>})<span style="color:#e6db74">&#34;;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> json <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>输出：</strong></p>
+<pre tabindex="0"><code>{
+    &#34;name&#34;: &#34;Alice&#34;,
+    &#34;age&#34;: 25,
+    &#34;city&#34;: &#34;Wonderland&#34;
+}
+</code></pre><hr>
+<h3 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h3>
+<ul>
+<li>​<code>R&quot;()&quot;</code>​ 是 C++11 引入的原始字符串字面量语法，用于避免转义字符的麻烦。</li>
+<li>可以包含换行符和特殊符号，适合定义多行字符串或复杂文本。</li>
+<li>如果字符串内容包含 <code>)&quot;</code>​，可以使用自定义分隔符，例如 <code>R&quot;delim(...)delim&quot;</code>​。</li>
+<li>原始字符串字面量在编写 JSON、XML、正则表达式或多行文本时非常有用。</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/cpp/">Cpp</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

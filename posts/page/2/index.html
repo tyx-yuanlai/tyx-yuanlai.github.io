@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Posts | My Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - My Blog">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8a01929066b898aae4363d45c6bd096c27515143ceb80abc485bd7ebde149ef2.css" integrity="sha256-igGSkGa4mKrkNj1Fxr0JbCdRUUPOuAq8SFvX694UnvI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog (Alt + H)">My Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Posts
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">std__find
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>std::find 2. 使用 ​std::find​​ 算法 C&#43;&#43; 标准库提供了 std::find​ 算法，可以在 std::vector​ 中查找元素。
+示例代码 #include &lt;iostream&gt; #include &lt;vector&gt; #include &lt;algorithm&gt; // 包含 std::find int main() { std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5}; int target = 3; // 使用 std::find 查找 auto it = std::find(vec.begin(), vec.end(), target); if (it != vec.end()) { std::cout &lt;&lt; &#34;Found at index: &#34; &lt;&lt; std::distance(vec.begin(), it) &lt;&lt; std::endl; } else { std::cout &lt;&lt; &#34;Not found&#34; &lt;&lt; std::endl; } return 0; } 输出 Found at index: 2 特点 使用标准库算法，代码简洁。 时间复杂度：O(n)​。 </p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to std__find" href="http://localhost:1313/posts/cpp/std__find/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">struct vs pair
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>struct vs pair 函数内部的struct只对函数内部可见
+‍
+pair适用于简单的，快速的，只有两个元素关联的情况（不建议嵌套）
+‍
+如果大于三个还是使用部分结构体
+‍
+‍
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to struct vs pair" href="http://localhost:1313/posts/cpp/struct-vs-pair/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">UPGRADE
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>UPGRADE std::srand(std::time(0)); std::rand()%length_; //UPGRADE c&#43;&#43;11 引入random库 C&#43;&#43;11 引入了 &lt;random&gt;​ 库，提供了更强大、更灵活的随机数生成功能。与 rand()​ 相比，&lt;random&gt;​ 库具有以下优点：
+更高质量的随机数。 更灵活的范围控制。 支持多种随机数分布（如均匀分布、正态分布等）。 下面是如何使用 &lt;random&gt;​ 库生成随机数的详细说明和示例代码。
+&lt;random&gt;​ 库的核心组件 随机数引擎：
+用于生成随机数序列。
+常用的引擎：
+​std::default_random_engine​：默认的随机数引擎。 ​std::mt19937​：基于梅森旋转算法的随机数引擎（高质量）。 随机数分布：
+用于将随机数引擎生成的随机数映射到指定的分布。
+常用的分布：
+​std::uniform_int_distribution​：均匀分布的整数。 ​std::uniform_real_distribution​：均匀分布的浮点数。 ​std::normal_distribution​：正态分布的浮点数。 种子：
+用于初始化随机数引擎。 可以使用当前时间（std::time(0)​）作为种子，以确保每次运行程序时生成不同的随机数序列。 示例代码 1. 生成均匀分布的整数 #include &lt;iostream&gt; #include &lt;random&gt; // 包含随机数库 #include &lt;ctime&gt; // 用于获取时间种子 int main() { // 初始化随机数引擎 std::mt19937 rng(std::time(0)); // 定义分布范围 [min, max] int min = -10; int max = 10; std::uniform_int_distribution&lt;int&gt; dist(min, max); // 生成随机数 for (int i = 0; i &lt; 10; &#43;&#43;i) { int randomValue = dist(rng); std::cout &lt;&lt; &#34;Random value: &#34; &lt;&lt; randomValue &lt;&lt; std::endl; } return 0; } 输出示例：
+...</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to UPGRADE" href="http://localhost:1313/posts/cpp/upgrade/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">vector
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>vector vector 套娃调用与数组一样
+‍
+vector&lt;&gt; …() 初始大小
+std::vector&lt;std::vector&lt;int&gt;&gt; matrix(rows, std::vector&lt;int&gt;(cols, defaultValue)); 多维初始化
+‍
+vector深拷贝
+直接调用构造函数 operator = swap() 交换两个vector assign() 清空原vector 并 深拷贝 ‍
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to vector" href="http://localhost:1313/posts/cpp/vector/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">字典操作
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>字典操作 定义方法 字典名={键:值,键:值} 字典名=dict() dic1=dict.fromkeys(列表，值) 本质 键值对（key:value）
+但是，索引时根据==键==索引==值==
+基本操作 增加、更改 dic1[key1]=value1 删除 del dic1[key1] dic1.clear() 键值操作 根据键查找数值 dic1[key1] dic.get(key1,default) # default 的意思是如果不存在返回default值，可改变内容，默认为default 返回键/值列表 key_list=dic1.keys() value_list=dic1.values() key_value_tuple=dic1.items() ‍
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 字典操作" href="http://localhost:1313/posts/py/%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">字符串操作
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>字符串操作 字符串本身操作 索引，切片，跳取 索引（[index]），切片（[首，尾]，包前不包后），跳取（[首，尾，steps]）
+s = &#39;ABCDEFGHIJKLMN&#39; s1 = s[0] print(&#39;s[0] = &#39; &#43; s1) #s[0] = A print(&#39;s[3] = &#39;&#43; s[3]) #s[3] = D print(&#39;倒数第三个数为：&#39; &#43; s[-3]) #倒数第三个数为：L print(&#39;最后一个数为：&#39; &#43; s[-1]) #最后一个数为：N 运算 &#43; * in not in 查找 s.index() s.find() 计算个数 s.count(要查找的内容，区间首，区间尾) 计算长度 len(s) 分割 s.split( ,拆分次数) #()内为分割内容，分割后就没啦 替换 s.replace(被替换内容，替换成的字符，替换次数) 连接 s1&#43;s2 &#39;用这里的东西连接&#39;.join(s1,s2) 字符串内容控制 大小写转换 s=s.caplitalize() #首字母大写 s.upper() #全部大写 s.lower() #全部小写 s.swapcase() #大小写转换 s.title() #每一句话首字母大写 居中 print(s.center( )) #用center()内的字符填充 移除首尾空白/指定字符 s = &#34; hello, world! &#34; result = s.strip() print(result) # 输出: &#39;hello, world!&#39; s = &#34;***hello, world!***&#34; result = s.strip(&#34;*&#34;) print(result) # 输出: &#39;hello, world!&#39; 字符串判断 isalpha isdigit islower isupper isspace 格式化输出 用% 用法与c相同
+...</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 字符串操作" href="http://localhost:1313/posts/py/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">文件与csv
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>文件与csv 文件路径 一般文件（纯文本文件） 打开文件 f=open(相对路径/绝对路径,读写参数,encoding=&#39;编码格式&#39;) #需要关闭 with open(路径) as f: #注意缩进 这里f数据类型为obj(file)，文件全部流入内存
+读写参数
+字符 含义 ‘r’ 读入 ‘w’ 写入 ‘a’ 在文件后补充 ‘b’ 二进制 ‘&#43;’ 打开用于更新 二进制打开方式不需要encoding参数
+eg：用二进制写入’wb&#39;
+读取文件 ​​
+read()可以带参数，表示读取的字节数
+写入文件 f.write(写入内容) 文本光标操作 f.tell() # tell 方法：文件对象的 tell 方法返回整数，表示文件指针距离文件开头的字节数 f.seek(偏移光标字节数,偏移参考) # seek方法：移动文件句柄 关于seek方法的参数：
+offset 表示偏移指针的字节数
+whence 表示偏移参考，默认为 0
+0 表示偏移参考文件的开头，offset 必须是 &gt;=0 的整数
+1 表示偏移参考当前位置，offset 可以是负数
+2 表示偏移参考文件的结尾，offset 一般是负数
+csv csv文件简介 纯文本文件 表格结构 以上特点决定了csv文件可以在编程软件中打开，同时也可以在表格软件中打开
+==分隔符（delimiter）==
+字段之间通常用 ​逗号(,)​ ​ 分隔，虽然也有可能用其他符号（如制表符、分号）作为分隔符。
+...</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 文件与csv" href="http://localhost:1313/posts/py/%E6%96%87%E4%BB%B6%E4%B8%8Ecsv/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">迭代器for
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>迭代器for for (auto&amp; thing : things) // ^ 注意用引用，否则不能连带改things里面原来的东西
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 迭代器for" href="http://localhost:1313/posts/cpp/%E8%BF%AD%E4%BB%A3%E5%99%A8for/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">随机数
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>随机数 ​​
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 随机数" href="http://localhost:1313/posts/py/%E9%9A%8F%E6%9C%BA%E6%95%B0/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">集合操作
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>集合操作 类型 包括set​和frozenset​两种类型
+定义方法 s1={1,2,3,1,2,3,4,5,6,6,7} s1=set() 基本运算 包含/不包含 ​words in/not in set1​
+等于/不等于 判断是否子集 ​set1&lt;set2​
+​set1.issubset(set2)​set1是否是set2子集
+​set2.issuperset(set2)​set1是否是set2超（母）集
+并 ​s1 | s2​
+​set1.union(set2)​
+交 ​s1 &amp; s2​
+​set1.intersection(set2)​
+差 ​s1 - s2​
+​set1.difference(set2) ​
+对称差分（异或） ​s1 ^ s2​
+常用方法 ​​
+增加 set1.add(元素) set1.update(集合) #set1.union()也可以算增加，但是在运算里面说过 减少 set1.discard() #删除指定元素 set1.pop() #随机删除一个元素并返回该值 set1.clear() #清空 ‍
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to 集合操作" href="http://localhost:1313/posts/py/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/posts/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
